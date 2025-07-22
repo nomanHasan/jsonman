@@ -35,14 +35,16 @@ const config = [
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        declaration: false,
+        declaration: true,
+        declarationDir: './dist',
+        outDir: './dist',
       }),
     ],
     external: [],
   },
-  // Type definitions
+  // Type definitions bundling
   {
-    input: 'dist/index.d.ts',
+    input: 'src/index.ts',
     output: {
       file: 'dist/index.d.ts',
       format: 'esm',
